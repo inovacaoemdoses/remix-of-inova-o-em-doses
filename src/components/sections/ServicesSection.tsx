@@ -1,0 +1,153 @@
+import { MegaphoneIcon, LightbulbGearsIcon, RocketCompassIcon, TargetIcon } from "@/components/decorative/SketchIcons";
+import { InkSplatter } from "@/components/decorative/InkSplatter";
+import { HandDrawnArrow } from "@/components/decorative/HandDrawnArrow";
+import { StarDoodle, SparkleDoodle } from "@/components/decorative/Doodles";
+import workshopBg from "@/assets/hellen-3.png";
+
+const services = [
+  {
+    icon: MegaphoneIcon,
+    title: "Palestras Inspiradoras",
+    description: "Incorporando Inovação ao DNA, Criatividade como Ferramenta e Segredos da Inovação para Líderes.",
+    accent: "yellow",
+    rotate: "-rotate-1",
+  },
+  {
+    icon: LightbulbGearsIcon,
+    title: "Workshops de Alto Nível",
+    description: "Sessões práticas para gerar ideias significativas e impulsionar resultados reais hoje mesmo.",
+    accent: "cyan",
+    rotate: "rotate-1",
+    featured: true,
+  },
+  {
+    icon: RocketCompassIcon,
+    title: "Mentorias e Consultoria",
+    description: "Gestão de projetos inovadores, metodologias ágeis e desenvolvimento de hard e soft skills.",
+    accent: "magenta",
+    rotate: "-rotate-0.5",
+  },
+  {
+    icon: TargetIcon,
+    title: "Pitch Deck e Funding",
+    description: "Como organizar e vender suas ideias para captar recursos e acelerar a transformação.",
+    accent: "yellow",
+    rotate: "rotate-0.5",
+  },
+];
+
+const ServicesSection = () => {
+  const scrollToContact = () => {
+    document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section id="servicos" className="relative py-24 overflow-hidden">
+      {/* Background decorative elements */}
+      <InkSplatter className="top-20 right-20 opacity-30" variant="cyan" size="xl" />
+      <InkSplatter className="bottom-40 left-10 opacity-20" variant="yellow" size="lg" />
+      <StarDoodle className="absolute top-32 left-1/4 animate-float" color="yellow" />
+      <SparkleDoodle className="absolute bottom-20 right-1/3 animate-float" style={{ animationDelay: '1.5s' }} />
+
+      <div className="container mx-auto px-4">
+        {/* Section header */}
+        <div className="text-center mb-16 relative z-10">
+          <span className="font-handwritten text-cyan-neon text-2xl mb-2 block">O que eu ofereço</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground">
+            Soluções em{" "}
+            <span className="relative inline-block">
+              Doses
+              <span className="absolute -bottom-2 left-0 w-full h-3 bg-yellow-neon/50 -skew-x-3 -z-10" />
+            </span>
+            {" "}de{" "}
+            <span className="relative inline-block">
+              Inovação
+              <InkSplatter className="-top-8 -left-8 opacity-40" variant="cyan" size="sm" />
+            </span>
+          </h2>
+        </div>
+
+        {/* Services grid */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto relative z-10">
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            const isFeatured = service.featured;
+            
+            return (
+              <div
+                key={index}
+                className={`sketch-card p-8 ${service.rotate} hover:rotate-0 transition-all duration-300 group relative ${
+                  isFeatured ? 'md:col-span-2' : ''
+                }`}
+              >
+                {/* Featured card with background image */}
+                {isFeatured && (
+                  <div className="absolute inset-0 rounded-[8px_12px_10px_14px] overflow-hidden -z-10">
+                    <img
+                      src={workshopBg}
+                      alt="Workshop"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Purple transparency overlay */}
+                    <div className="absolute inset-0 bg-purple-900/85" />
+                  </div>
+                )}
+
+                <div className={`flex ${isFeatured ? 'flex-col md:flex-row md:items-center' : 'flex-col'} gap-6`}>
+                  {/* Icon */}
+                  <div className={`flex-shrink-0 ${isFeatured ? 'md:w-1/3' : ''}`}>
+                    <div className="w-20 h-20 rounded-[12px_16px_14px_18px] bg-muted/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <IconComponent className="w-16 h-16" />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className={isFeatured ? 'md:w-2/3' : ''}>
+                    <h3 className={`text-xl font-bold text-foreground mb-3 ${
+                      service.accent === 'yellow' ? 'group-hover:text-yellow-neon' :
+                      service.accent === 'cyan' ? 'group-hover:text-cyan-neon' :
+                      'group-hover:text-magenta'
+                    } transition-colors`}>
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    {/* CTA for featured card */}
+                    {isFeatured && (
+                      <button
+                        onClick={scrollToContact}
+                        className="mt-6 btn-cyan px-6 py-3 text-sm rounded-[6px_10px_8px_12px] font-bold inline-flex items-center gap-2 group/btn"
+                      >
+                        Quero participar
+                        <HandDrawnArrow direction="right" color="yellow" className="w-12 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+                {/* Decorative corner element */}
+                <div className={`absolute -top-2 -right-2 w-6 h-6 ${
+                  service.accent === 'yellow' ? 'bg-yellow-neon' :
+                  service.accent === 'cyan' ? 'bg-cyan-neon' :
+                  'bg-magenta'
+                } rounded-full opacity-80`} />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Arrow pointing to CTA */}
+        <div className="flex justify-center mt-12">
+          <div className="flex items-center gap-4">
+            <HandDrawnArrow direction="down" color="yellow" className="w-8 h-16" />
+            <span className="font-handwritten text-yellow-neon text-xl">Veja mais abaixo!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ServicesSection;
