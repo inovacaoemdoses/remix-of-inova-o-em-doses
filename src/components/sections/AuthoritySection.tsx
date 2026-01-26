@@ -1,5 +1,6 @@
 import { InkSplatter } from "@/components/decorative/InkSplatter";
 import { StarDoodle, SparkleDoodle, ScribbleUnderline } from "@/components/decorative/Doodles";
+import { ExternalLink } from "lucide-react";
 import hellenImage4 from "@/assets/hellen-4.png";
 
 const awards = [
@@ -8,18 +9,20 @@ const awards = [
     title: "Prêmio Tele Síntese de Inovação",
     description: "Reconhecimento nacional por projetos inovadores",
     color: "yellow",
+    link: "https://telesintese.com.br/confira-os-vencedores-do-premio-anuario-tele-sintese-inovacao-2022/",
   },
   {
     year: "2024",
-    title: "Empresa Inovadora",
+    title: "Prêmio Empresa Inovadora",
     description: "Premiação por liderança em inovação corporativa",
     color: "cyan",
+    link: "https://g1.globo.com/pr/parana/especial-publicitario/viasoft/connect-week/noticia/2024/06/14/premio-empresa-inovadora-2024-anuncia-finalistas.ghtml",
   },
 ];
 
 const AuthoritySection = () => {
   return (
-    <section id="reconhecimento" className="relative py-24 overflow-hidden">
+    <section id="reconhecimento" className="relative py-28 overflow-hidden">
       {/* Full-width background with duotone */}
       <div className="absolute inset-0 z-0">
         <img
@@ -71,9 +74,24 @@ const AuthoritySection = () => {
                 }`}>
                   {award.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground mb-4">
                   {award.description}
                 </p>
+
+                {/* Link button */}
+                <a
+                  href={award.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all hover:scale-105 ${
+                    award.color === 'yellow'
+                      ? 'bg-yellow-neon/20 text-yellow-neon hover:bg-yellow-neon/30'
+                      : 'bg-cyan-neon/20 text-cyan-neon hover:bg-cyan-neon/30'
+                  }`}
+                >
+                  Ver matéria
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
             ))}
           </div>

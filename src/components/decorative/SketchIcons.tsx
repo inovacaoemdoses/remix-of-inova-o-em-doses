@@ -97,7 +97,44 @@ export const TargetIcon = ({ className }: SketchIconProps) => (
     {/* Feathers on arrow */}
     <line x1="8" y1="72" x2="12" y2="65" className="stroke-cyan-neon" strokeWidth="2" />
     <line x1="8" y1="72" x2="15" y2="68" className="stroke-cyan-neon" strokeWidth="2" />
-    {/* Success sparkle */}
-    <circle cx="40" cy="40" r="2" className="fill-white" />
-  </svg>
+  {/* Success sparkle */}
+  <circle cx="40" cy="40" r="2" className="fill-white" />
+</svg>
+);
+
+// Users/Team icon - for Mentoria Corporativa
+export const UsersIcon = ({ className }: SketchIconProps) => (
+<svg viewBox="0 0 80 80" className={cn("w-16 h-16", className)} fill="none">
+  {/* Main person */}
+  <circle cx="40" cy="22" r="10" className="stroke-cyan-neon fill-cyan-neon/20" strokeWidth="3" />
+  <path
+    d="M25,55 Q25,40 40,40 Q55,40 55,55"
+    className="stroke-cyan-neon fill-cyan-neon/20"
+    strokeWidth="3"
+    strokeLinecap="round"
+  />
+  {/* Left person */}
+  <circle cx="18" cy="30" r="7" className="stroke-yellow-neon fill-yellow-neon/20" strokeWidth="2" />
+  <path
+    d="M8,55 Q8,42 18,42 Q28,42 28,50"
+    className="stroke-yellow-neon fill-yellow-neon/20"
+    strokeWidth="2"
+    strokeLinecap="round"
+  />
+  {/* Right person */}
+  <circle cx="62" cy="30" r="7" className="stroke-magenta fill-magenta/20" strokeWidth="2" />
+  <path
+    d="M52,50 Q52,42 62,42 Q72,42 72,55"
+    className="stroke-magenta fill-magenta/20"
+    strokeWidth="2"
+    strokeLinecap="round"
+  />
+  {/* Connection lines */}
+  <line x1="28" y1="35" x2="32" y2="35" className="stroke-yellow-neon" strokeWidth="2" strokeDasharray="2 2" />
+  <line x1="48" y1="35" x2="52" y2="35" className="stroke-magenta" strokeWidth="2" strokeDasharray="2 2" />
+  {/* Sparkles */}
+  <circle cx="40" cy="65" r="3" className="fill-cyan-neon" />
+  <circle cx="15" cy="60" r="2" className="fill-yellow-neon" />
+  <circle cx="65" cy="60" r="2" className="fill-magenta" />
+</svg>
 );

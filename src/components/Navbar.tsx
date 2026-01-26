@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { StarDoodle } from "@/components/decorative/Doodles";
 import logo from "@/assets/logo.jpg";
 
 const navLinks = [
@@ -66,12 +65,11 @@ const Navbar = () => {
               </button>
             ))}
             
-            {/* CTA Button */}
+            {/* CTA Button - sem ícone de estrela */}
             <button
               onClick={() => scrollToSection("#contato")}
-              className="btn-neon px-6 py-2 text-sm rounded-[6px_10px_8px_12px] flex items-center gap-2"
+              className="btn-neon px-6 py-2 text-sm rounded-[6px_10px_8px_12px]"
             >
-              <StarDoodle color="cyan" className="w-4 h-4" />
               Fale Comigo
             </button>
           </div>
@@ -106,9 +104,8 @@ const Navbar = () => {
               ))}
               <button
                 onClick={() => scrollToSection("#contato")}
-                className="btn-neon px-6 py-3 text-sm rounded-[6px_10px_8px_12px] flex items-center justify-center gap-2 mt-2"
+                className="btn-neon px-6 py-3 text-sm rounded-[6px_10px_8px_12px] mt-2"
               >
-                <StarDoodle color="cyan" className="w-4 h-4" />
                 Fale Comigo
               </button>
             </div>
