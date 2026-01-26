@@ -31,6 +31,9 @@ const services: Service[] = [
     rotate: "rotate-1",
     featured: true,
   },
+];
+
+const mentoriaServices: Service[] = [
   {
     icon: RocketCompassIcon,
     title: "Mentoria Estratégica (Profissionais)",
@@ -148,6 +151,50 @@ const ServicesSection = () => {
 
                 {/* Decorative corner element */}
                 <div className={`absolute -top-2 -right-2 w-6 h-6 ${
+                  service.accent === 'yellow' ? 'bg-yellow-neon' :
+                  service.accent === 'cyan' ? 'bg-cyan-neon' :
+                  'bg-magenta'
+                } rounded-full opacity-80`} />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Mentoria Services - 3 cards alinhados */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto relative z-10 mt-8">
+          {mentoriaServices.map((service, index) => {
+            const IconComponent = service.icon;
+            
+            return (
+              <div
+                key={index}
+                className={`sketch-card p-6 ${service.rotate} hover:rotate-0 transition-all duration-300 group relative h-full flex flex-col`}
+              >
+                <div className="flex flex-col gap-4 h-full">
+                  {/* Icon */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-[12px_16px_14px_18px] bg-muted/50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <IconComponent className="w-12 h-12" />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 flex flex-col">
+                    <h3 className={`text-lg font-bold text-foreground mb-2 ${
+                      service.accent === 'yellow' ? 'group-hover:text-yellow-neon' :
+                      service.accent === 'cyan' ? 'group-hover:text-cyan-neon' :
+                      'group-hover:text-magenta'
+                    } transition-colors`}>
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Decorative corner element */}
+                <div className={`absolute -top-2 -right-2 w-5 h-5 ${
                   service.accent === 'yellow' ? 'bg-yellow-neon' :
                   service.accent === 'cyan' ? 'bg-cyan-neon' :
                   'bg-magenta'
