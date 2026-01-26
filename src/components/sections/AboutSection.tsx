@@ -13,8 +13,6 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
           <div className="relative z-10">
-            {/* Section label */}
-            <span className="font-handwritten text-cyan-neon text-2xl mb-2 block">Quem sou eu?</span>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6">
               A{" "}
@@ -90,17 +88,6 @@ const AboutSection = () => {
               
               {/* Decorative elements - traço mais fino */}
               <div className="absolute -inset-4 border-2 border-dotted border-yellow-neon/30 rounded-[30px_40px_35px_45px] -z-10 transform -rotate-1" />
-            </div>
-
-            {/* Stats floating badges */}
-            <div className="absolute -top-4 -left-4 bg-cyan-neon text-purple-dark px-4 py-2 rounded-[8px_12px_10px_14px] transform -rotate-6 shadow-lg">
-              <span className="font-handwritten text-xl font-bold block">UFPR</span>
-              <span className="text-xs font-bold">Mestrado</span>
-            </div>
-
-            <div className="absolute -bottom-4 -right-4 bg-yellow-neon text-purple-dark px-4 py-2 rounded-[10px_14px_12px_16px] transform rotate-3 shadow-lg">
-              <span className="font-handwritten text-xl font-bold block">Global</span>
-              <span className="text-xs font-bold">Experiência</span>
             </div>
           </div>
         </div>

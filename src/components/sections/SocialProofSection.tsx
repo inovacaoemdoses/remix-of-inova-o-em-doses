@@ -1,4 +1,5 @@
 import { ScribbleUnderline, StarDoodle } from "@/components/decorative/Doodles";
+import logoId from "@/assets/logo-id.jpg";
 
 // Placeholder logos - in a real scenario, these would be actual client logos
 const clients = [
@@ -41,13 +42,14 @@ const SocialProofSection = () => {
             {[...clients, ...clients].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-8 px-8 py-4 rounded-[10px_14px_12px_16px] border-2 border-dashed transition-all hover:scale-105"
+                className="flex-shrink-0 mx-8 flex items-center gap-3 px-6 py-3 rounded-[10px_14px_12px_16px] border-2 border-dashed transition-all hover:scale-105"
                 style={{
                   borderColor: client.color === 'cyan' ? 'hsl(186 94% 51% / 0.5)' :
                                client.color === 'yellow' ? 'hsl(48 97% 53% / 0.5)' :
                                'hsl(292 84% 61% / 0.5)'
                 }}
               >
+                <img src={logoId} alt="Logo" className="w-8 h-8 rounded-full object-cover" />
                 <span className={`font-bold text-lg ${
                   client.color === 'cyan' ? 'text-cyan-neon' :
                   client.color === 'yellow' ? 'text-yellow-neon' :

@@ -1,4 +1,5 @@
 import { ScribbleUnderline } from "@/components/decorative/Doodles";
+import logoId from "@/assets/logo-id.jpg";
 
 const companies = [
   { name: "BRMALLS", color: "cyan" },
@@ -36,13 +37,14 @@ const ExecutiveExperienceSection = () => {
             {[...companies, ...companies].map((company, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-6 px-8 py-4 rounded-lg border transition-all hover:scale-105 bg-card/50"
+                className="flex-shrink-0 mx-6 flex items-center gap-3 px-6 py-3 rounded-lg border transition-all hover:scale-105 bg-card/50"
                 style={{
                   borderColor: company.color === 'cyan' ? 'hsl(186 94% 51% / 0.4)' :
                                company.color === 'yellow' ? 'hsl(48 97% 53% / 0.4)' :
                                'hsl(292 84% 61% / 0.4)'
                 }}
               >
+                <img src={logoId} alt="Logo" className="w-8 h-8 rounded-full object-cover" />
                 <span className={`font-bold text-lg whitespace-nowrap ${
                   company.color === 'cyan' ? 'text-cyan-neon' :
                   company.color === 'yellow' ? 'text-yellow-neon' :

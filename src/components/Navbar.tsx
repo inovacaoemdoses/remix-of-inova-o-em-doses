@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo-id.jpg";
 
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
