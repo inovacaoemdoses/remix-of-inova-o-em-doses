@@ -4,7 +4,7 @@ import { StarDoodle, ScribbleUnderline } from "@/components/decorative/Doodles";
 
 const AboutSection = () => {
   return (
-    <section id="sobre" className="relative py-24 overflow-hidden bg-muted/20">
+    <section id="sobre" className="relative py-28 overflow-hidden bg-muted/20">
       {/* Background decorative elements */}
       <InkSplatter className="top-10 left-10 opacity-20" variant="purple" size="lg" />
       <StarDoodle className="absolute top-20 right-20 animate-float" color="yellow" />
@@ -53,6 +53,25 @@ const AboutSection = () => {
                 </div>
               </div>
             </div>
+
+            {/* SEMEAD highlight */}
+            <div className="sketch-card p-6 mt-4 border-yellow-neon/50">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-yellow-neon/20 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-yellow-neon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-yellow-neon text-lg mb-1">
+                    Conquista Acadêmica 2025
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Artigo acadêmico sobre <strong className="text-foreground">Cultura da Inovação</strong> selecionado e apresentado no <span className="text-cyan-neon font-semibold">SEMEAD (novembro/2025)</span>, com indicação para revista internacional.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Image side */}
@@ -69,8 +88,8 @@ const AboutSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent" />
               </div>
               
-              {/* Decorative elements */}
-              <div className="absolute -inset-4 border-4 border-dotted border-yellow-neon/30 rounded-[30px_40px_35px_45px] -z-10 transform -rotate-1" />
+              {/* Decorative elements - traço mais fino */}
+              <div className="absolute -inset-4 border-2 border-dotted border-yellow-neon/30 rounded-[30px_40px_35px_45px] -z-10 transform -rotate-1" />
             </div>
 
             {/* Stats floating badges */}
